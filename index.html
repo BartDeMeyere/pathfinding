@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pathfinding</title>
+    <link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+    <div class="header">
+        <div class="headertitle">Pathfinding webapplication</div>
+        <div class="controls">
+                <select id="mazegenerator">
+                    <option value="">select maze algorithm</option>
+                    <option value="1">Depth first search</option>
+                    <option value="2">Prims algorithm</option>
+                    <option value="3">Kruskal algorithm</option>
+                    <option value="4">Hunt and kill algorithm</option>
+                    <option value="5">recursive division</option>
+                </select>
+            </div>
+        <div class="controls">
+            <select id="mazesolver">
+                <option value="">select solver algorithm</option>
+                <option value="1">Breadth first search</option>
+            </select>
+        </div>
+    </div>
+    <div class="output"></div>
+    <canvas></canvas>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/node.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/maze.js"></script>
+    <script src="js/recursivedivision.js"></script>
+    <script src="js/dijkstra_solve.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
