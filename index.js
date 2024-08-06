@@ -26,9 +26,9 @@ $("#mazesolver").prop("disabled" , true)
 if("ontouchstart" in document.documentElement){
     
     console.log("you are on a touch screen device");
-    cols = 15
+    cols = 25
     size = canvas.width / cols 
-    rows = 15
+    rows = 25
     
 }else{
     
