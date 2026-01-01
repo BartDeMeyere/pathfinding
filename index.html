@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualisatie van Pathfinding-algoritmes in een interactief grid</title>
+    <link rel="stylesheet" href="layout.css">
+</head>
+
+<body>
+    <div class="container">
+      
+        <div class="info">
+            <h3>Pathfinding - visualizer</h3>
+            <p>Dit project genereert een willekeurig doolhof en laat DFS of BFS het pad vinden van start (rood) naar eind (groen).
+                Klik op de knoppen in het menu om een algoritme te kiezen of het doolhof opnieuw te bouwen.</p>
+        </div>
+
+        <div class="menu">
+
+            <h4>Selecteer algoritme</h4>
+
+            <label>
+                <input type="radio" name="algoritme" id="dfs" value="dfs">
+                Depth first search
+            </label>
+
+            <label>
+                <input type="radio" name="algoritme" id="bfs" value="bfs">
+                Breadth first search
+            </label>
+
+            <div class="buttons">
+                <button id="start">Start</button>
+                <button id="reset">Reset</button>
+            </div>
+
+        </div>
+
+        <div class="error-message"></div>
+
+        <div class="output">
+            <span id="num-rows"></span>
+            <span id="num-cols"></span>
+            <span id="startcell"></span>
+            <span id="endcell"></span>
+            <span id="pathlength"></span>
+            <span id="path"></span>
+            <span id="visitedcells"></span>
+        </div>
+
+    </div>
+
+    <canvas></canvas>
+
+    <script src="main.js" type="module"></script>
+
+</body>
+
+</html>
