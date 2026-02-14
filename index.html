@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PathFinder demo</title>
+    <link rel="stylesheet" href="layout.css">
+</head>
+
+<body>
+    <header>
+        <div id="title">PathFinder</div>
+        <div id="title-info">Pathfinding visualizer in javascript</div>
+    </header>
+    <nav class="ui-nav">
+            <!-- Ruimte voor extra knoppen -->
+            <div class="buttons">
+                <button id="clearwalls">clear walls</button>
+                <button id="resetgrid">reset</button>
+                <button id="randomwalls">random walls</button>
+                <button id="solve">A*</button>
+                <button id="maze">maze</button>
+            </div>
+    </nav>
+    <canvas id="myCanvas"></canvas>
+    <section id="output"></section>
+    <footer>&copy; 2026 - Bart De Meyere</footer>
+    <script src="jquery-4.0.0.js"></script>
+    <script src="main.js" type="module"></script>
+</body>
+
+</html>
