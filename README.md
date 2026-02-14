@@ -21,3 +21,10 @@ HTML Canvas
 CSS3 voor eenvoudige styling
 
 Geen frameworks nodig (lightweight & snel)
+
+📝 Screenshots
+
+![SRC_003](https://github.com/user-attachments/assets/1f5f8090-78c6-483c-a7f3-9be24229146d)
+![SRC_002](https://github.com/user-attachments/assets/747f90aa-5a11-438e-a11f-91d0608d5f59)
+![SRC_001](https://github.com/user-attachments/assets/8d9b409e-e7b2-476a-888e-45d90a8cb2a0)
+
