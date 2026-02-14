@@ -5,7 +5,7 @@ Experimenteer met verschillende algoritmes en visualiseer hoe paden in real-time
 
 🌐 Live Demo
 
-Bekijk de live demo hier: bartdemeyere.github.io/pathfinder
+Bekijk de live demo hier: http://bartdemeyere.github.io/pathfinding
 
 ⚡ Features
 
