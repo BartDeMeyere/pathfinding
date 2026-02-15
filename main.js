@@ -3,7 +3,7 @@ let myCanvas = document.getElementById("myCanvas");
 let pathfinder = new Pathfinder({ canvas: myCanvas })
 
 
-if (innerWidth < 768) { pathfinder.buildGridFromViewport(13, 21) } else { pathfinder.buildGridFromViewport(35, 95) }
+if (innerWidth < 768) { pathfinder.buildGridFromViewport(15, 31) } else { pathfinder.buildGridFromViewport(35, 95) }
 
 
 $("#resetgrid").on("click", () => {

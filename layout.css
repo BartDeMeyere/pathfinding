@@ -1,7 +1,6 @@
-
 * {
 
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body {
@@ -20,46 +19,46 @@ header {
     padding-top: 15px;
     padding-bottom: 15px;
     font-size: 1.5rem;
-   
+
 
 }
 
-#title{
+#title {
 
     font-size: 2.2rem;
     font-weight: bold;
     text-shadow: 3px 3px 10px #000;
 }
 
-#title-info{
+#title-info {
 
     font-size: 1rem;
     padding-top: 5px;
     padding-bottom: 5px;
 }
 
-footer{
+footer {
 
     position: absolute;
-    bottom:0;
+    bottom: 0;
     background-color: #4a516a;
     text-align: center;
     width: 100%;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    color:aliceblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: aliceblue;
     font-size: .8rem;
     padding: 5px;
 
 }
 
-#output{
+#output {
 
     font-size: 1rem;
     color: #000000;
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif
+    font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
 #myCanvas {
@@ -80,9 +79,11 @@ footer{
 }
 
 .buttons {
+    
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
+
 }
 
 button {
@@ -91,18 +92,30 @@ button {
     border: 1px solid rgb(48, 51, 8);
     padding: 0.6rem 1.2rem;
     font-size: 0.95rem;
-   
+
     background-color: #fdfa11;
-  color: #222;
-  
+    color: #222;
+
     cursor: pointer;
-    
-  }
-  
-  button:hover {
+
+}
+
+button:hover {
     background-color: #f5f000;
-  }
-  
-  button:active {
+}
+
+button:active {
     transform: scale(0.97);
-  }
+}
+
+@media (max-width: 600px) {
+    .buttons {
+        flex-wrap: wrap;
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .buttons button {
+        flex: 1 1 45%;
+    }
+}
