@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze Solver Studio</title>
+    <style>
+        body {
+
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f7f8fc;
+
+        }
+
+        header h1 {
+            text-align: center;
+            color: #2f3554;
+            font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+            letter-spacing: 0.06em;
+            font-weight: 800;
+            margin: 0.8rem 0 0.4rem;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+            background: linear-gradient(90deg, #2f3554 0%, #4b5563 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            padding: 1vh ;
+        }
+
+        #canvas-container {
+            text-align: center;
+            margin: 0.5rem 0 0.75rem;
+            padding: 0.75rem;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        #output-labels, #nav-bar {
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 2vh 2vw
+
+        }
+
+        button {
+            padding: 0.6rem 1rem;
+            border: 1px solid #d0d5e2;
+            border-radius: 999px;
+            background: #ffffff;
+            color: #2f3554;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+            transition: all 0.2s ease;
+        }
+
+        button:hover {
+            border-color: #2f3554;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            transform: translateY(-1px);
+        }
+
+        button:active {
+            transform: translateY(0);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+        }
+
+        #output-labels {
+            font-size: 0.95rem;
+            color: #4b5563;
+        }
+
+        #output-labels label {
+            display: inline-block;
+            margin-left: 0.25rem;
+            font-weight: 700;
+            color: #2f3554;
+            min-width: 1.5rem;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Maze Solver Studio</h1>
+    </header>
+    <div id="canvas-container">
+        <canvas id="myCanvas"></canvas>
+    </div>
+    <div id="output-labels">
+        <div>zoekpad lengte: <label id="pathlength-label">0</label></div>
+        <div>cellen bezocht: <label id="countvisitedcells-label">0</label></div>
+    </div>
+    <nav id="nav-bar">
+        <button id="start-solve-btn">(Her)starten zoekpad</button>
+        <button id="startstop-solve-btn">Pauzeren</button>
+        <button id="new-maze-btn">Nieuw</button>
+    </nav>
+    <script src="main.js" type="module"></script>
+</body>
+
+</html>
