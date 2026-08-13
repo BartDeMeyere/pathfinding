@@ -16,6 +16,7 @@ export class Solver {
         this.solved = false
         this.canStart = false
         this.paused = false
+        this.type = "randomwalk"
     }
 
     getRandomUnvisitedNeighbor(row, col) {

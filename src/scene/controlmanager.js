@@ -26,9 +26,32 @@ export class ControlManager {
 
         this.startsolverbutton.addEventListener("click", (e) => {
 
-            this.solver.restart()
-            this.startstopsolverbutton.textContent = "Pauzeren"
-    
+            const geselecteerd = document.querySelector(
+                'input[name="zoekmethode"]:checked'
+            );
+
+            if (!geselecteerd) {
+                console.error("Selecteer eerst een zoekmethode.");
+                return;
+            }
+
+            const methode = geselecteerd.value;
+
+            if (methode === "dfs") {
+                console.log("DFS starten");
+                // start DFS
+                this.solver.restart()
+                this.startstopsolverbutton.textContent = "Pauzeren"
+            }
+            else if (methode === "bfs") {
+                console.log("BFS starten");
+                // start BFS
+            }
+            else if (methode === "astart") {
+                console.log("A* starten");
+                // start A*
+            }
+
         })
 
         this.startstopsolverbutton.addEventListener("click", (e) => {
@@ -37,14 +60,14 @@ export class ControlManager {
 
                 this.solver.start()
                 this.startstopsolverbutton.textContent = "Pauzeren"
-               
+
                 return
 
             } else {
 
                 this.solver.stop()
                 this.startstopsolverbutton.textContent = "Hervatten"
-             
+
             }
 
         })
@@ -52,8 +75,8 @@ export class ControlManager {
 
     update() {
 
-        this.countvisitedcellslabel.textContent = this.solver.countVisitedCells() 
-        this.pathlengthlabel.textContent = this.solver.path.length 
+        this.countvisitedcellslabel.textContent = this.solver.countVisitedCells()
+        this.pathlengthlabel.textContent = this.solver.path.length
     }
 
 }

@@ -12,7 +12,7 @@ export class Scene {
         this.ctx = this.canvas.getContext("2d")
         this.dpr = window.devicePixelRatio || 1
         this.event = new EventHandler(this.canvas)
-        this.grid = new Grid(35, 75, 20)
+        this.grid = new Grid(45, 85, 15)
         this.maze = new Maze(this.grid)
         this.solver = new Solver(this.maze)
         this.controlmanager = new ControlManager(this.maze, this.solver)
