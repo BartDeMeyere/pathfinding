@@ -1,5 +1,3 @@
-https://bartdemeyere.github.io/pathfinding/
-
 # Maze Solver Studio
 
 Een interactieve webapplicatie waarin je een doolhof kunt bekijken, genereren en laten oplossen met een visuele zoekprocedure. De app is opgebouwd met HTML5 Canvas en JavaScript-modules, en laat zien hoe een pad wordt opgebouwd door de solver door het doolhof te navigeren.
@@ -40,7 +38,8 @@ project/
 
 ## Aan de slag
 
-1. Om het project te doen werken moet het draaien op een server. Live server uit Vscode. Of rechtstreeks de repo volgen op github.
+1. Open de map in je browser of met Live Server.
+2. Open [index.html](index.html) in de browser.
 3. Gebruik de knoppen om een nieuw doolhof te laden of de solver te starten, pauzeren of te resetten.
 
 ## Vereisten

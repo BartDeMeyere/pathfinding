@@ -1,72 +1,85 @@
 export class ControlManager {
 
-    constructor(maze, solver) {
+    constructor(maze, solvers) {
 
         this.maze = maze
-        this.solver = solver
-        this.startsolverbutton = document.getElementById("start-solve-btn")
-        this.startstopsolverbutton = document.getElementById('startstop-solve-btn')
-        this.newmazebutton = document.getElementById("new-maze-btn")
+        this.solvers = solvers
+        this.activeSolver = this.solvers.dfs
 
+        //buttons
+        this.start_solver_button = document.getElementById("start-solve-btn")
+        this.pause_solver_button = document.getElementById('pause-solve-btn')
+        this.new_maze_button = document.getElementById("new-maze-btn")
+
+        //labels
         this.countvisitedcellslabel = document.getElementById("countvisitedcells-label")
         this.pathlengthlabel = document.getElementById("pathlength-label")
+        this.currentalgo = document.getElementById("currentalgo-label")
 
         this.init()
+
     }
 
     init() {
 
-        this.newmazebutton.addEventListener("click", (e) => {
+        this.new_maze_button.addEventListener("click", (e) => {
 
-            this.solver.reset()
             this.maze.rebuild()
-            this.startstopsolverbutton.textContent = "Pauzeren"
-            this.solver.canStart = false//true
+
+            if (this.activeSolver) {
+
+                this.activeSolver.reset()
+                this.pause_solver_button.textContent = "Pauzeren"
+                this.activeSolver.canStart = false//true
+            }
+
         })
 
-        this.startsolverbutton.addEventListener("click", (e) => {
+        this.start_solver_button.addEventListener("click", (e) => {
 
-            const geselecteerd = document.querySelector(
-                'input[name="zoekmethode"]:checked'
-            );
+            let selected = document.querySelector('input[name="zoekmethode"]:checked');
 
-            if (!geselecteerd) {
+            if (!selected) {
+
                 console.error("Selecteer eerst een zoekmethode.");
                 return;
             }
 
-            const methode = geselecteerd.value;
+            let method = selected.value;
 
-            if (methode === "dfs") {
-                console.log("DFS starten");
+            if (method === "randomsearch") {
+                console.log("randomsearch starten");
                 // start DFS
-                this.solver.restart()
-                this.startstopsolverbutton.textContent = "Pauzeren"
+                this.activeSolver = this.solvers.dfs
+                this.activeSolver.restart()
+                this.pause_solver_button.textContent = "Pauzeren"
             }
-            else if (methode === "bfs") {
+            else if (method === "bfs") {
                 console.log("BFS starten");
                 // start BFS
             }
-            else if (methode === "astart") {
+            else if (method === "astart") {
                 console.log("A* starten");
                 // start A*
             }
 
         })
 
-        this.startstopsolverbutton.addEventListener("click", (e) => {
+        this.pause_solver_button.addEventListener("click", (e) => {
 
-            if (this.solver.paused) {
+            if (!this.activeSolver) return
 
-                this.solver.start()
-                this.startstopsolverbutton.textContent = "Pauzeren"
+            if (this.activeSolver.paused) {
+
+                this.activeSolver.start()
+                this.pause_solver_button.textContent = "Pauzeren"
 
                 return
 
             } else {
 
-                this.solver.stop()
-                this.startstopsolverbutton.textContent = "Hervatten"
+                this.activeSolver.stop()
+                this.pause_solver_button.textContent = "Hervatten"
 
             }
 
@@ -75,8 +88,9 @@ export class ControlManager {
 
     update() {
 
-        this.countvisitedcellslabel.textContent = this.solver.countVisitedCells()
-        this.pathlengthlabel.textContent = this.solver.path.length
+        this.countvisitedcellslabel.textContent = this.activeSolver.countVisitedCells()
+        this.pathlengthlabel.textContent = this.activeSolver.path.length
+        this.currentalgo.textContent = this.activeSolver.type
     }
 
 }

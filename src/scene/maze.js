@@ -12,7 +12,9 @@ export class Maze {
 
     pickRandomCell() {
 
-        let cell = this.grid.cells[Math.floor(Math.random() * this.grid.cells.length)]
+        let row = Math.floor(Math.random() * this.grid.rows)
+        let col = Math.floor(Math.random() * this.grid.cols)
+        let cell = this.grid.cells[row][col]
         cell.visited = true
         return cell
     }
@@ -76,21 +78,26 @@ export class Maze {
 
     reset() {
 
-        this.grid.cells.forEach(cell => {
-            cell.visited = false
-        });
+        for (let i = 0; i < this.grid.rows; i++) {
+            for (let j = 0; j < this.grid.cols; j++) {
+                this.grid.cells[i][j].visited = false
+            }
+        }
     }
-    
-    rebuild(){
 
-        this.grid.cells.forEach(cell => {
+    rebuild() {
 
-            cell.visited = false 
-            cell.top = true 
-            cell.right = true 
-            cell.bottom = true 
-            cell.left = true
-        })
+        for (let i = 0; i < this.grid.rows; i++) {
+            for (let j = 0; j < this.grid.cols; j++) {
+
+                let cell = this.grid.cells[i][j]
+                cell.visited = false
+                cell.top = true
+                cell.right = true
+                cell.bottom = true
+                cell.left = true
+            }
+        }
 
         this.current = this.pickRandomCell()
         this.stack = [this.current]
@@ -100,13 +107,9 @@ export class Maze {
 
     getCellAt(row, col) {
 
-        for (const cell of this.grid.cells) {
-            if (cell.row === row && cell.col === col) {
-                return cell
-            }
-        }
-
-        return null
+        if (this.grid.cells[row] === undefined) return false
+        if (this.grid.cells[row][col] === undefined) return false
+        return this.grid.cells[row][col]
     }
 
     create() {

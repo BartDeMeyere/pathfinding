@@ -9,11 +9,12 @@ export class Grid {
         this.cells = []
 
         for (let i = 0; i < this.rows; i++) {
+            this.cells.push([])
             for (let j = 0; j < this.cols; j++) {
                 const x = j * this.cellSize + this.cellSize / 2
                 const y = i * this.cellSize + this.cellSize / 2
-                const cell = new Cell(x, y, this.cellSize,i,j)
-                this.cells.push(cell)
+                const cell = new Cell(x, y, this.cellSize, i, j)
+                this.cells[i][j] = cell
             }
         }
 
@@ -21,8 +22,10 @@ export class Grid {
 
     draw(ctx) {
 
-        for (const cell of this.cells) {
-            cell.draw(ctx)
+        for (let i = 0; i < this.rows; i++) {
+            for (let j = 0; j < this.cols; j++) {
+                this.cells[i][j].draw(ctx)
+            }
         }
 
     }

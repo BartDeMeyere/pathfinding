@@ -111,24 +111,25 @@
     <div id="output-labels">
         <div>zoekpad lengte: <label id="pathlength-label">0</label></div>
         <div>cellen bezocht: <label id="countvisitedcells-label">0</label></div>
+         <div>Gekozen algoritme: <label id="currentalgo-label">Geen</label></div>
     </div>
     <nav id="nav-bar">
         <div>
             <button id="start-solve-btn">(Her)starten zoekpad</button>
-            <button id="startstop-solve-btn">Pauzeren</button>
+            <button id="pause-solve-btn">Pauzeren</button>
             <button id="new-maze-btn">Nieuw</button>
         </div>
         <div>
             <label>
-                <input type="radio" name="zoekmethode" value="dfs">
+                <input type="radio" name="zoekmethode" value="randomsearch">
                 Random walk - Backtracking
             </label>
             <label>
-                <input type="radio" name="zoekmethode" value="bfs">
+                <input type="radio" name="zoekmethode" value="bfs" disabled>
                 Bread first search (nog niet operationeel)
             </label>
             <label>
-                <input type="radio" name="zoekmethode" value="astart">
+                <input type="radio" name="zoekmethode" value="astart" disabled>
                 Astar search (nog niet operationeel)
             </label>
         </div>
